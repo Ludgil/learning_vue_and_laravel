@@ -2433,9 +2433,12 @@ __webpack_require__.r(__webpack_exports__);
         orderedItemsIds.push(item.id);
       });
       var orderData = {
-        customerDetails: this.customerDetails,
-        totalPrice: this.finalAmount,
-        orderedItems: orderedItemsIds
+        resto_id: this.restoId,
+        order_data: {
+          customerDetails: this.customerDetails,
+          totalPrice: this.finalAmount,
+          orderedItems: orderedItemsIds
+        }
       };
       console.log(orderData);
       axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/order/save', orderData).then(function (response) {

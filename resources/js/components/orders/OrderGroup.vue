@@ -114,9 +114,12 @@ export default {
                 orderedItemsIds.push(item.id);
             })
             let orderData = {
-                customerDetails : this.customerDetails,
-                totalPrice : this.finalAmount,
-                orderedItems : orderedItemsIds
+                resto_id : this.restoId,
+                order_data: {
+                    customerDetails : this.customerDetails,
+                    totalPrice : this.finalAmount,
+                    orderedItems : orderedItemsIds
+                }
             };
 
             console.log(orderData);

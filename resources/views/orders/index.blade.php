@@ -5,12 +5,15 @@
 
     <div class="row mb-3">
         <div class="col-md-12">
-            <p>{{$resto}}</p>
+        <h2>Manage orders for {{$resto->name}}</h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
+            <div class="mb-3">
+                <a href="{{route('resto.orders.add', $resto->id)}}" class="btn btn-primary float-right">Add order</a>
+            </div>
             @if($orders->count() > 0)
             <table class="table table-hover table-bordered table-striped">
                 <thead>
@@ -27,7 +30,7 @@
                         <tr>
                             <td>{{$order->id}}</td>
                             <td>{{$order->amount}}</td>
-                            <td>{{$order->isComplete}}</td>
+                            <td>{{($order->isComplete) ? 'Completed' :  'Incomplete'}}</td>
 
                             <td>
                                 Name: {{$order['order_details']['customer_name']}}

@@ -39,6 +39,10 @@ Vue.component('card-component', require('./components/Card.vue').default);
 Vue.component('menu-add-form', require('./components/menu/MenuAddForm.vue').default);
 Vue.component('resto-group', require('./components/restos/RestoGroup.vue').default);
 Vue.component('resto-add-form', require('./components/restos/RestoAddForm.vue').default);
+Vue.component('order-group', require('./components/orders/OrderGroup.vue').default);
+Vue.component('order-form', require('./components/orders/OrderForm.vue').default);
+Vue.component('order-menu-items', require('./components/orders/OrderMenuItems.vue').default);
+
 
 
 /**
@@ -46,6 +50,9 @@ Vue.component('resto-add-form', require('./components/restos/RestoAddForm.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+
+window.eventBus = new Vue({});
 
 document.addEventListener('turbolinks:load', () => {
     var element = document.getElementById("app");

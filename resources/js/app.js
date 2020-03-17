@@ -42,6 +42,8 @@ Vue.component('resto-add-form', require('./components/restos/RestoAddForm.vue').
 Vue.component('order-group', require('./components/orders/OrderGroup.vue').default);
 Vue.component('order-form', require('./components/orders/OrderForm.vue').default);
 Vue.component('order-menu-items', require('./components/orders/OrderMenuItems.vue').default);
+Vue.component('manage-orders', require('./components/orders/ManageOrders.vue').default);
+Vue.component('order-items', require('./components/OrderItems.vue').default);
 
 
 

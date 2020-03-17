@@ -11,14 +11,15 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="mb-3">
+            @if($orders->count() > 0)
+            <div class="mb-3 float-right">
                 <a href="{{route('resto.orders.add', $resto->id)}}" class="btn btn-primary float-right">Add order</a>
             </div>
-            @if($orders->count() > 0)
-            <table class="table table-hover table-bordered table-striped">
+            <manage-orders :orders="{{ json_encode($orders)}}"></manage-orders>
+            {{-- <table class="table table-hover table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th> Order Id</th>
+                        <th>Order Id</th>
                         <th>Amount</th>
                         <th>Status</th>
                         <th>Customer details</th>
@@ -41,7 +42,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table> --}}
             {{$orders->render()}}
             @else 
                 <p>You don't have any orders yet</p>

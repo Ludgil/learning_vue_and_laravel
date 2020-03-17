@@ -57,6 +57,7 @@ export default {
         window.eventBus.$on('addMenuItem', this.handleNewMenuItem);
         window.eventBus.$on('filteredList', this.handleFilteredList);
         window.eventBus.$on('clearFilteredList', this.handleClearFilteredList);
+        window.eventBus.$on('removeOrderedItem', this.handleRemoveOrderedItem);
         
     },
 
@@ -106,6 +107,10 @@ export default {
         customerDetailsHandle(customer){
             console.log(customer);
             this.customerDetails = customer;
+        },
+
+        handleRemoveOrderedItem(item){
+            this.orderDetails = this.orderDetails.filter(orderDetail => orderDetail.id != item.id)
         },
 
         handleOrderSave(){
